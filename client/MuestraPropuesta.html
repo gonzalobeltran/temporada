@@ -1,0 +1,38 @@
+<template name="MuestraPropuesta">
+  <div class="modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+
+          <p><strong>Nombre del programa:</strong> {{nombreDelPrograma}}</p>
+          <p><strong>Profesor:</strong> {{profesor}}</p><br>
+          <p><strong>Integrantes:</strong></p>
+          {{#each integrantes}}
+            <p>{{this}}</p>
+          {{/each}}
+
+          <br>
+
+          <p><strong>Breve presentación y fundamentación de la línea temática del programa</strong></p>
+          <p>{{presentacion}}</p><br>
+
+          <p><strong>Requerimientos especiales de producción</strong></p>
+          <p>{{requerimientos}}</p><br>
+
+          <p><strong>Programa:</strong> {{duracion}}</p><br>
+
+          <p><strong>Primera parte:</strong></p>
+          <p>{{{saltos primeraParte}}}</p><br>
+
+          <p><strong>Segunda parte:</strong></p>
+          <p>{{{saltos segundaParte}}}</p><br>
+
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</template>

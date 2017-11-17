@@ -1,0 +1,23 @@
+<template name="EditaPropuesta">
+  <div class="modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+
+          {{#if _id}}
+            {{> quickForm collection="Propuestas" doc=this id="modificaPropuestaForm" type="update" buttonContent="Modificar"}}
+            {{#quickRemoveButton collection="Propuestas" _id=this._id class="btn btn-danger" data-dismiss="modal"}}Eliminar propuesta{{/quickRemoveButton}}
+          {{else}}
+            {{> quickForm collection="Propuestas" id="nuevaPropuestaForm" type="insert" buttonContent="Agregar"}}
+          {{/if}}
+
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</template>

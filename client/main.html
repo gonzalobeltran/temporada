@@ -1,0 +1,26 @@
+<head>
+  <title>Temporada</title>
+</head>
+
+<body>
+
+  {{> main}}
+
+</body>
+
+<template name="main">
+
+  <button class="btn btn-default js-nuevaPropuesta">Nueva propuesta</button>
+
+  {{#each propuestas}}
+    {{> propuesta this}}
+  {{/each}}
+</template>
+
+<template name="propuesta">
+  <div class="propuesta js-modificaPropuesta">
+    <p><strong>{{nombreDelPrograma}}</strong></p>
+    <p>{{profesor}}</p>
+  </div>
+
+</template>
