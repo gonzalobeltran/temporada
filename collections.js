@@ -43,6 +43,20 @@ const propuesta = new SimpleSchema({
       type: 'hidden'
     }
   },
+  destaca: {
+    type: Boolean,
+    optional: true,
+    autoform: {
+      type: 'hidden'
+    }
+  },
+  selec: {
+    type: Number,
+    optional: true,
+    autoform: {
+      type: 'hidden'
+    }
+  },
   nombreDelPrograma: String,
   profesor: String,
   integrantes: {

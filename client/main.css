@@ -1,8 +1,21 @@
 /* CSS declarations go here */
 
-.propuesta{
+.propuesta {
   background-color: #eee;
   text-align: center;
   padding: 10px;
   border-radius: 4px;
+}
+
+.propuesta.seleccionado {
+  background-color: #4c7;
+}
+
+.propuesta.oscurecido {
+  background-color: #fafafa;
+  color: #ccc;
+}
+
+.propuesta.destacado {
+  background-color: #ee4;
 }

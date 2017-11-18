@@ -23,7 +23,12 @@
             </td>
             {{#each propuestas fecha}}
               <td>
-                {{> propuesta this}}
+
+                <div class="propuesta js-modificaPropuesta {{seleccion}}">
+                  <p><strong>{{nombreDelPrograma}}</strong></p>
+                  <p>{{profesor}}</p>
+                </div>
+
               </td>
             {{/each}}
           </tr>
@@ -31,14 +36,5 @@
 
       </tbody>
     </table>
-  </div>
-</template>
-
-
-
-<template name="propuesta">
-  <div class="propuesta js-modificaPropuesta">
-    <p><strong>{{nombreDelPrograma}}</strong></p>
-    <p>{{profesor}}</p>
   </div>
 </template>
