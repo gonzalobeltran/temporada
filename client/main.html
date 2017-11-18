@@ -10,31 +10,48 @@
 
 <template name="main">
 
-  <button class="btn btn-default js-nuevaPropuesta">Nueva propuesta</button>
-
   <div class="table-responsive">
+    <h3>Propuestas Temporada 2018</h3>
+    <hr>
+
     <table class="table">
       <tbody>
-
         {{#each fecha in todasLasFechas}}
           <tr>
-            <td>
-              <strong>{{fecha.label}}</strong> <br> {{fecha.fechas}}
+
+            <td class="cuadroFecha {{fecha.ciclo}}">
+              <strong>{{fecha.label}}</strong> <br><br> {{{fecha.fechas}}}
             </td>
+
+            {{#with propuestaSel fecha}}
+              {{> Propuesta prop=this fecha=fecha.value sel=fecha.ciclo}}
+            {{/with}}
+
             {{#each propuestas fecha}}
-              <td>
-
-                <div class="propuesta js-modificaPropuesta {{seleccion}}">
-                  <p><strong>{{nombreDelPrograma}}</strong></p>
-                  <p>{{profesor}}</p>
-                </div>
-
-              </td>
+              {{> Propuesta prop=this fecha=fecha.value}}
             {{/each}}
+
           </tr>
         {{/each}}
 
       </tbody>
     </table>
+
+    <button class="btn btn-default js-nuevaPropuesta">Nueva propuesta</button>
+
   </div>
+</template>
+
+<template name="Propuesta">
+  
+  <td class="propuesta {{prop.destaca}} {{sel}} {{oscurecida}}">
+    <p><strong>{{prop.nombreDelPrograma}}</strong></p>
+    <p>{{prop.profesor}}</p>
+    <div class="btn-group">
+      <button class="btn btn-default btn-xs js-ver"><span class="glyphicon glyphicon-search"></span></button>
+      <button class="btn btn-default btn-xs js-editar"><span class="glyphicon glyphicon-pencil"></span></button>
+      <button class="btn btn-default btn-xs js-seleccionar"><span class="glyphicon glyphicon-ok"></span></button>
+    </div>
+  </td>
+
 </template>

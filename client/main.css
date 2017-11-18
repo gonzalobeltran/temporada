@@ -1,21 +1,47 @@
 /* CSS declarations go here */
-
-.propuesta {
-  background-color: #eee;
+.table tbody>tr>td{
+  vertical-align: middle;
+  border: 1px solid white;
   text-align: center;
   padding: 10px;
-  border-radius: 4px;
+  width: 150px;
 }
 
-.propuesta.seleccionado {
-  background-color: #4c7;
+.cuadroFecha {
+  background-color: #43e7a0;
 }
 
-.propuesta.oscurecido {
-  background-color: #fafafa;
-  color: #ccc;
+.propuesta {
+  background-color: #ccc;
+  color: black;
 }
 
-.propuesta.destacado {
-  background-color: #ee4;
+.propuesta.seleccionada {
+  background-color: #e3eaa7;
+  width: 150px;
+}
+
+.propuesta.oscurecida {
+  filter: opacity(10%);
+}
+
+.propuesta.destacada {
+  background-color: #fe4;
+  color: black;
+}
+
+.sacra {
+  background-color: #cfe0e8;
+}
+
+.camara {
+  background-color: #b7d7e8;
+}
+
+.teclados {
+  background-color: #87bdd8;
+}
+
+.antigua {
+  background-color: #daebe8;
 }

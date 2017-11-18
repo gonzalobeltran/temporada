@@ -12,33 +12,42 @@ Template.main.helpers({
   'propuestas'(fecha) {
     return Propuestas.find({fechas: fecha.value}, {sort: {nombreDelPrograma:1, selec: 1}});
   },
+  'propuestaSel'(fecha) {
+    let prop = Propuestas.findOne({selec: fecha.value});
+    if (!prop) return {nombreDelPrograma: '*', profesor: '*'};
+    return prop;
+  },
   'saltos'(txt) {
     return txt.replace(/(?:\r\n|\r|\n)/g, '<br />');
   },
   'todasLasFechas'() {
     return todasLasFechas;
   },
-  'seleccion'() {
-    if (this.destaca) return 'destacado';
-    if (this.selec == -1) return 'oscurecido';
-    if (this.selec == 2) return 'seleccionado';
-  }
 });
 
 Template.main.events({
   'click .js-nuevaPropuesta'() {
     Modal.show('EditaPropuesta');
   },
-  'mousedown .js-modificaPropuesta'(e) {
-    console.log(e.button);
-    if (e.button == 1) {
-      Modal.show('EditaPropuesta', this);
-    } else {
-      //Modal.show('MuestraPropuesta', this);
-      Meteor.call('destaca', this);
-    }
+});
+
+Template.Propuesta.helpers({
+  'oscurecida'() {
+    if (!this.sel && this.prop.selec) return 'oscurecida';
+  }
+});
+
+Template.Propuesta.events({
+  'click .js-ver'() {
+    Modal.show('MuestraPropuesta', this.prop);
   },
-  'contextmenu .js-modificaPropuesta'(e) {
-    return false;
+  'click .js-editar'() {
+    Modal.show('EditaPropuesta', this.prop);
+  },
+  'click .js-seleccionar'() {
+    Meteor.call('selecciona', this.prop, this.fecha);
+  },
+  'dblclick .propuesta'() {
+    Meteor.call('destaca', this.prop);
   }
 });
