@@ -12,15 +12,33 @@
 
   <button class="btn btn-default js-nuevaPropuesta">Nueva propuesta</button>
 
-  {{#each propuestas}}
-    {{> propuesta this}}
-  {{/each}}
+  <div class="table-responsive">
+    <table class="table">
+      <tbody>
+
+        {{#each fecha in todasLasFechas}}
+          <tr>
+            <td>
+              <strong>{{fecha.label}}</strong> <br> {{fecha.fechas}}
+            </td>
+            {{#each propuestas fecha}}
+              <td>
+                {{> propuesta this}}
+              </td>
+            {{/each}}
+          </tr>
+        {{/each}}
+
+      </tbody>
+    </table>
+  </div>
 </template>
+
+
 
 <template name="propuesta">
   <div class="propuesta js-modificaPropuesta">
     <p><strong>{{nombreDelPrograma}}</strong></p>
     <p>{{profesor}}</p>
   </div>
-
 </template>

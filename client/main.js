@@ -9,11 +9,14 @@ window.Propuestas = Propuestas;
 
 
 Template.main.helpers({
-  'propuestas'() {
-    return Propuestas.find();
+  'propuestas'(fecha) {
+    return Propuestas.find({fechas: fecha.value}, {sort: {seleccion: 1}});
   },
   'saltos'(txt) {
     return txt.replace(/(?:\r\n|\r|\n)/g, '<br />');
+  },
+  'todasLasFechas'() {
+    return todasLasFechas;
   }
 });
 
@@ -22,6 +25,7 @@ Template.main.events({
     Modal.show('EditaPropuesta');
   },
   'mousedown .js-modificaPropuesta'(e) {
+    console.log(e.button);
     if (e.button == 1) {
       Modal.show('EditaPropuesta', this);
     } else {
