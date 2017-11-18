@@ -38,6 +38,9 @@ Template.Propuesta.helpers({
 });
 
 Template.Propuesta.events({
+  'click .js-destacar'() {
+    Meteor.call('destaca', this.prop);
+  },
   'click .js-ver'() {
     Modal.show('MuestraPropuesta', this.prop);
   },
@@ -47,7 +50,4 @@ Template.Propuesta.events({
   'click .js-seleccionar'() {
     Meteor.call('selecciona', this.prop, this.fecha);
   },
-  'dblclick .propuesta'() {
-    Meteor.call('destaca', this.prop);
-  }
 });

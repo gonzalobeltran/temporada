@@ -1,4 +1,8 @@
 /* CSS declarations go here */
+.contenido {
+  width: 2000px;
+}
+
 .table tbody>tr>td{
   vertical-align: middle;
   border: 1px solid white;
@@ -7,18 +11,12 @@
   width: 150px;
 }
 
-.cuadroFecha {
-  background-color: #43e7a0;
-}
-
 .propuesta {
   background-color: #ccc;
-  color: black;
 }
 
 .propuesta.seleccionada {
   background-color: #e3eaa7;
-  width: 150px;
 }
 
 .propuesta.oscurecida {
@@ -27,21 +25,24 @@
 
 .propuesta.destacada {
   background-color: #fe4;
-  color: black;
 }
 
 .sacra {
   background-color: #cfe0e8;
+  color: #352;
 }
 
 .camara {
   background-color: #b7d7e8;
+  color: #352;
 }
 
 .teclados {
   background-color: #87bdd8;
+  color: #352;
 }
 
 .antigua {
   background-color: #daebe8;
+  color: #352;
 }

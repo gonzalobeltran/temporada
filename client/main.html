@@ -10,7 +10,7 @@
 
 <template name="main">
 
-  <div class="table-responsive">
+  <div class="contenido">
     <h3>Propuestas Temporada 2018</h3>
     <hr>
 
@@ -19,17 +19,17 @@
         {{#each fecha in todasLasFechas}}
           <tr>
 
-            <td class="cuadroFecha {{fecha.ciclo}}">
+            <td class="{{fecha.ciclo}} headcol">
               <strong>{{fecha.label}}</strong> <br><br> {{{fecha.fechas}}}
             </td>
 
-            {{#with propuestaSel fecha}}
+              {{#with propuestaSel fecha}}
               {{> Propuesta prop=this fecha=fecha.value sel=fecha.ciclo}}
-            {{/with}}
+              {{/with}}
 
-            {{#each propuestas fecha}}
+              {{#each propuestas fecha}}
               {{> Propuesta prop=this fecha=fecha.value}}
-            {{/each}}
+              {{/each}}
 
           </tr>
         {{/each}}
@@ -43,11 +43,12 @@
 </template>
 
 <template name="Propuesta">
-  
+
   <td class="propuesta {{prop.destaca}} {{sel}} {{oscurecida}}">
     <p><strong>{{prop.nombreDelPrograma}}</strong></p>
     <p>{{prop.profesor}}</p>
     <div class="btn-group">
+      <button class="btn btn-default btn-xs js-destacar"><span class="glyphicon glyphicon-sunglasses"></span></button>
       <button class="btn btn-default btn-xs js-ver"><span class="glyphicon glyphicon-search"></span></button>
       <button class="btn btn-default btn-xs js-editar"><span class="glyphicon glyphicon-pencil"></span></button>
       <button class="btn btn-default btn-xs js-seleccionar"><span class="glyphicon glyphicon-ok"></span></button>
