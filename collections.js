@@ -31,7 +31,7 @@ todasLasFechas = [
   {label:'Música Antigua - Programa 2', value: 'antigua2', fechas: 'ju 11.10 SL <br> vi 12.10 ASM <br> sa 13.10 AM', ciclo: 'antigua'},
   {label:'Música Antigua - Programa 3', value: 'antigua3', fechas: 'ju 18.10 SL <br> vi 19.10 ASM <br> sa 20.10 AM', ciclo: 'antigua'},
   {label:'Música Antigua - Programa 4', value: 'antigua4', fechas: 'ju 25.10 SL <br> vi 26.10 ASM <br> sa 27.10 AM', ciclo: 'antigua'},
-  {label:'Extra', value: 'extra', fechas: '-'},
+  {label:'Extra', value: 'extra', fechas: '-', ciclo: 'extra'},
 ];
 
 

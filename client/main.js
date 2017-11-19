@@ -34,6 +34,10 @@ Template.main.events({
 Template.Propuesta.helpers({
   'oscurecida'() {
     if (!this.sel && this.prop.selec) return 'oscurecida';
+  },
+  'seleccionada'() {
+    if (this.prop.profesor == '*') return 'seleccionada';
+    else return this.sel;
   }
 });
 

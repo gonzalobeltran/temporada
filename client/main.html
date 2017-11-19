@@ -19,17 +19,17 @@
         {{#each fecha in todasLasFechas}}
           <tr>
 
-            <td class="{{fecha.ciclo}} headcol">
+            <th class="{{fecha.ciclo}}">
               <strong>{{fecha.label}}</strong> <br><br> {{{fecha.fechas}}}
-            </td>
+            </th>
 
-              {{#with propuestaSel fecha}}
+            {{#with propuestaSel fecha}}
               {{> Propuesta prop=this fecha=fecha.value sel=fecha.ciclo}}
-              {{/with}}
+            {{/with}}
 
-              {{#each propuestas fecha}}
+            {{#each propuestas fecha}}
               {{> Propuesta prop=this fecha=fecha.value}}
-              {{/each}}
+            {{/each}}
 
           </tr>
         {{/each}}
@@ -44,7 +44,7 @@
 
 <template name="Propuesta">
 
-  <td class="propuesta {{prop.destaca}} {{sel}} {{oscurecida}}">
+  <td class="propuesta {{prop.destaca}} {{seleccionada}} {{oscurecida}}">
     <p><strong>{{prop.nombreDelPrograma}}</strong></p>
     <p>{{prop.profesor}}</p>
     <div class="btn-group">
