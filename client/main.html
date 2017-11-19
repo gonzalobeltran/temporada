@@ -19,9 +19,9 @@
         {{#each fecha in todasLasFechas}}
           <tr>
 
-            <th class="{{fecha.ciclo}}">
+            <td class="{{fecha.ciclo}} {{fechaDestacada fecha}}">
               <strong>{{fecha.label}}</strong> <br><br> {{{fecha.fechas}}}
-            </th>
+            </td>
 
             {{#with propuestaSel fecha}}
               {{> Propuesta prop=this fecha=fecha.value sel=fecha.ciclo}}

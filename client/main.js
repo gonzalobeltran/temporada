@@ -17,6 +17,10 @@ Template.main.helpers({
     if (!prop) return {nombreDelPrograma: '*', profesor: '*'};
     return prop;
   },
+  'fechaDestacada'(fecha ) {
+    let d = Propuestas.find({destaca: 'destacada', fechas: fecha.value}).count();
+    if (d) return 'fechaDestacada';
+  },
   'saltos'(txt) {
     return txt.replace(/(?:\r\n|\r|\n)/g, '<br />');
   },
@@ -36,7 +40,7 @@ Template.Propuesta.helpers({
     if (!this.sel && this.prop.selec) return 'oscurecida';
   },
   'seleccionada'() {
-    if (this.prop.profesor == '*') return 'seleccionada';
+    if (this.prop.profesor == '*') return 'disponible';
     else return this.sel;
   }
 });

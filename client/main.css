@@ -5,17 +5,18 @@
 
 .table tbody>tr>td{
   vertical-align: middle;
-  border: 1px solid white;
+  border: 1px solid black;
   text-align: center;
   padding: 10px;
   width: 150px;
+  height: 200px;
 }
 
 .propuesta {
   background-color: #ccc;
 }
 
-.propuesta.seleccionada {
+.propuesta.disponible {
   background-color: #e3eaa7;
 }
 
@@ -25,6 +26,10 @@
 
 .propuesta.destacada {
   background-color: #fe4;
+}
+
+.fechaDestacada {
+  color: red !important;
 }
 
 .sacra {
