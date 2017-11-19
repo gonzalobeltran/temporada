@@ -1,6 +1,6 @@
 /* CSS declarations go here */
 .contenido {
-  width: 2000px;
+  width: 2600px;
 }
 
 .table tbody>tr>td{
@@ -8,7 +8,7 @@
   border: 1px solid black;
   text-align: center;
   padding: 10px;
-  width: 150px;
+  width: 200px;
   height: 200px;
 }
 
